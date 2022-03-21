@@ -1,6 +1,6 @@
 # Changelog
 
-* TBD:
+* v1.0.2:
 	* Handle unknown tag when (un)shortening queries
 * v1.0.1:
 	* Removed underscore dependency
