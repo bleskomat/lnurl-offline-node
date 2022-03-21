@@ -100,6 +100,14 @@ describe('unshortenQuery(query)', function() {
 				metadata: '[["text/plain","example metadata"]]',
 			},
 		},
+		{
+			query: {
+				t: 'unknown',
+			},
+			expected: {
+				tag: 'unknown',
+			},
+		},
 	].forEach(test => {
 		const { query, expected } = test;
 		it(JSON.stringify(query), function() {
