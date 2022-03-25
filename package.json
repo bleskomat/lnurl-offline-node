@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samotari/lnurl-offline-node.git"
+    "url": "git+https://github.com/bleskomat/lnurl-offline-node.git"
   },
   "author": {
     "name": "Charles Hill",
@@ -32,9 +32,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/samotari/lnurl-offline-node/issues"
+    "url": "https://github.com/bleskomat/lnurl-offline-node/issues"
   },
-  "homepage": "https://github.com/samotari/lnurl-offline-node#readme",
+  "homepage": "https://github.com/bleskomat/lnurl-offline-node#readme",
   "devDependencies": {
     "mocha": "9.2.2"
   },
