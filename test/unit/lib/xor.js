@@ -22,6 +22,12 @@ describe('xor', function() {
 			amount: 48,
 			key: 'different-secret-key',
 		},
+		{
+			p: 'AQh6lgkspVd0ZAfXocwcnmHxNUy-WhTCttk=',
+			pin: 2948,
+			amount: 15300,
+			key: 'super duper secret',
+		},
 	];
 
 	describe('decrypt(key, payload)', function() {
