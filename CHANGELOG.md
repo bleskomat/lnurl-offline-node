@@ -1,5 +1,7 @@
 # Changelog
 
+* v1.1.1:
+	* Various fixes in xor.decrypt
 * v1.1.0:
 	* Add generateApiKey method
 * v1.0.2:
