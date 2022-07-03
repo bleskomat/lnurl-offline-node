@@ -1,5 +1,7 @@
 # Changelog
 
+* v1.2.0:
+	* Added xor.encrypt method
 * v1.1.1:
 	* Various fixes in xor.decrypt
 * v1.1.0:
