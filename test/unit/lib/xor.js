@@ -8,24 +8,28 @@ describe('xor', function() {
 			p: 'AQhnxmlzUf9K7AW4jf5K_4vPUFP538fN',
 			pin: 1234,
 			amount: 1,
+			nonce: Buffer.from('67c6697351ff4aec', 'hex'),
 			key: 'test-super-secret-key',
 		},
 		{
 			p: 'AQhnxmlzUf9K7AW4Mepe_8ArcfITXgyU',
 			pin: 4206,
 			amount: 21,
+			nonce: Buffer.from('67c6697351ff4aec', 'hex'),
 			key: 'test-super-secret-key',
 		},
 		{
 			p: 'AQhnxmlzUf9K7AULR4UZRd16oDOpwKn9',
 			pin: 7604,
 			amount: 48,
+			nonce: Buffer.from('67c6697351ff4aec', 'hex'),
 			key: 'different-secret-key',
 		},
 		{
 			p: 'AQh6lgkspVd0ZAfXocwcnmHxNUy-WhTCttk=',
 			pin: 2948,
 			amount: 15300,
+			nonce: Buffer.from('7a96092ca5577464', 'hex'),
 			key: 'super duper secret',
 		},
 	];
@@ -87,6 +91,25 @@ describe('xor', function() {
 				);
 				assert.strictEqual(pin, payload.pin);
 				assert.strictEqual(amount, payload.amount);
+			});
+		});
+	});
+
+	describe('encrypt(key, data)', function() {
+
+		it('returns encrypted payload', function() {
+			payloads.forEach(payload => {
+				const key = Buffer.from(payload.key, 'utf8');
+				const { amount, nonce, pin } = payload;
+				const p = xor.encrypt(
+					key,
+					{ amount, pin },
+					{ nonce }
+				);
+				assert.ok(Buffer.isBuffer(p));
+				const decrypted = xor.decrypt(key, p);
+				assert.strictEqual(decrypted.pin, pin);
+				assert.strictEqual(decrypted.amount, amount);
 			});
 		});
 	});
